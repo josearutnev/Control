@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #f3efe6;
-  --surface: #fffdf8;
-  --ink: #1f1a17;
-  --muted: #5e534c;
-  --line: #e4d9cc;
-  --accent: #1f6f5b;
-  --accent-strong: #165445;
-  --accent-soft: #e5f3ee;
+  --bg: #efedf1;
+  --surface: #ffffff;
+  --ink: #2b2430;
+  --muted: #6d6573;
+  --line: #e3dde6;
+  --plum: #5c2d66;
+  --accent: #b02a72;
+  --accent-strong: #6d2a68;
+  --accent-soft: #f8e7f1;
+  --gold: #e0a23c;
+  --charcoal: #2c3138;
   --bad: #9f1239;
   --bad-soft: #fde8ee;
   --good: #166534;
-  --warn: #9a3412;
-  --shadow: 0 12px 30px rgba(70, 46, 24, 0.06);
+  --warn: #9a6412;
+  --shadow: 0 12px 30px rgba(60, 32, 70, 0.07);
   --font-sans: var(--font-outfit), "Segoe UI", sans-serif;
   --font-serif: var(--font-fraunces), Georgia, serif;
   color-scheme: light;
@@ -31,7 +34,7 @@ body {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top, rgba(31, 111, 91, 0.08), transparent 32rem),
+    radial-gradient(circle at top, rgba(176, 42, 114, 0.07), transparent 26rem),
     var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
@@ -67,10 +70,21 @@ a {
 
 .brand-mark {
   margin: 0;
+  color: var(--plum);
   font-family: var(--font-serif);
   font-size: 2.4rem;
   font-weight: 560;
   letter-spacing: -0.04em;
+}
+
+.brand-mark::after {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 3px;
+  margin-top: 0.65rem;
+  border-radius: 999px;
+  background: var(--gold);
 }
 
 .brand-sub {
@@ -86,13 +100,16 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.9rem 1rem 0.7rem;
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  padding: 0.9rem 1rem 0.85rem;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 88%, white);
+  box-shadow: inset 0 -3px 0 var(--gold);
   backdrop-filter: blur(10px);
 }
 
 .topbar h1 {
   margin: 0;
+  color: var(--plum);
   font-family: var(--font-serif);
   font-size: 1.45rem;
   font-weight: 560;
@@ -120,8 +137,8 @@ a {
   grid-template-columns: repeat(5, 1fr);
   width: min(100%, 42rem);
   padding: 0.35rem 0.4rem calc(0.35rem + env(safe-area-inset-bottom));
-  border-top: 1px solid var(--line);
-  background: rgba(255, 253, 248, 0.96);
+  border-top: 3px solid var(--gold);
+  background: var(--charcoal);
   backdrop-filter: blur(12px);
 }
 
@@ -133,14 +150,14 @@ a {
   min-height: 3.25rem;
   padding-top: 0.35rem;
   border-radius: 0.9rem;
-  color: var(--muted);
+  color: #c9c3ce;
   font-size: 0.72rem;
   text-decoration: none;
 }
 
 .tab.active {
-  color: var(--accent-strong);
-  background: var(--accent-soft);
+  color: #f7b6d6;
+  background: rgba(176, 42, 114, 0.28);
 }
 
 .stack {
@@ -177,6 +194,7 @@ a {
 
 .stat-value {
   margin: 0.35rem 0 0.15rem;
+  color: var(--plum);
   font-family: var(--font-serif);
   font-size: 1.35rem;
   letter-spacing: -0.03em;
@@ -426,7 +444,7 @@ a {
   display: grid;
   place-items: end center;
   padding: 1rem;
-  background: rgba(31, 26, 23, 0.35);
+  background: rgba(44, 49, 56, 0.46);
 }
 
 .dialog {
@@ -439,6 +457,7 @@ a {
 
 .code {
   margin: 0;
+  color: var(--plum);
   font-family: var(--font-serif);
   font-size: 2rem;
   letter-spacing: 0.18em;
@@ -456,7 +475,7 @@ a {
 .banner {
   padding: 0.8rem 0.9rem;
   border-radius: 1rem;
-  background: #fff4e8;
+  background: #fbf3e4;
   color: var(--warn);
 }
 
