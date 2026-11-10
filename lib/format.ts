@@ -146,7 +146,10 @@ export function messageFromError(error: { message?: string; code?: string } | nu
   if (!error) return "No se pudo completar. Intenta de nuevo.";
   if (/invalid login credentials/i.test(text)) return "Correo o contraseña incorrectos.";
   if (/email not confirmed/i.test(text)) {
-    return "Falta confirmar el correo. Revisa tu bandeja de entrada.";
+    return "La cuenta todavía no puede entrar. Vuelve a crearla desde esta pantalla.";
+  }
+  if (/email address not authorized|error sending confirmation/i.test(text)) {
+    return "No se pudo enviar el correo. Crea la cuenta de nuevo: ya no hace falta confirmarla.";
   }
   if (/already registered/i.test(text)) return "Ese correo ya tiene cuenta. Entra con tu contraseña.";
   if (
