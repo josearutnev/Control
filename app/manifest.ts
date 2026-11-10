@@ -7,8 +7,13 @@ export default function manifest(): MetadataRoute.Manifest {
     description: "Gastos del hogar para dos.",
     start_url: "/",
     display: "standalone",
-    background_color: "#f3efe6",
-    theme_color: "#1f6f5b",
+    background_color: "#efedf1",
+    theme_color: "#efedf1",
     lang: "es",
+    icons: [
+      { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
+    ],
   };
 }
